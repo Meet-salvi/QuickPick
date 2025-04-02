@@ -1,0 +1,47 @@
+.login-form{
+  width: 30%;
+  margin: 0 auto;
+  border: 1px solid #ccc;
+  padding: 30px;
+}
+
+.login-form input{
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 20px;
+  border: 1px solid #333;
+}
+
+.login-icon span{
+  font-size: 120px;
+  color: #333;
+  text-align: center;
+  width: 100%;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+
+.log-btn{
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-weight: 500;
+  color: #fff;
+}
+
+/*  */
+.user-details-wrap{
+  width: 80%;
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.search-icon{
+  color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background: 0;
+}
+

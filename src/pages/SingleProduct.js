@@ -78,6 +78,8 @@ export default function SingleProduct() {
 
     return (
         <div>
+
+
             {/* <!-- breadcrumb-section --> */}
             <div className="breadcrumb-section breadcrumb-bg">
                 <div className="container">
@@ -119,13 +121,6 @@ export default function SingleProduct() {
                                     </Link>
                                     <p><strong>Categories: </strong>{singleproduct.category}</p>
                                 </div>
-                                <h4>Share:</h4>
-                                <ul className="product-share">
-                                    <li><Link href="#"><i className="fab fa-facebook-f"></i></Link></li>
-                                    <li><Link href="#"><i className="fab fa-twitter"></i></Link></li>
-                                    <li><Link href="#"><i className="fab fa-google-plus-g"></i></Link></li>
-                                    <li><Link href="#"><i className="fab fa-linkedin"></i></Link></li>
-                                </ul>
                             </div>
                         </div>
                     </div>

@@ -1361,7 +1361,7 @@ a.mobile-show.search-bar-icon:hover {
 
 ----------------------------------------------------------------------------- */
 .hero-bg {
-  background-image: url(https://img.freepik.com/psd-premium/modelo-de-banner-de-moda-de-tendencia-psd-premium_641545-41.jpg?w=2000);
+  background-image: url(https://st4.depositphotos.com/14582236/40241/v/1600/depositphotos_402410482-stock-illustration-banner-simple-beauty-products-mock.jpg);
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -1898,9 +1898,14 @@ span.comment-date {
   background-color: #f5f5f5;
 }
 
+.image-column .image img{
+  width: 100%;
+  /* height: 400px; */
+}
+
 .cart-banner .image-column {
   position: relative;
-  margin-top: 40px;
+  margin-top: 0px;
 }
 
 .cart-banner .image-column .price-box {

@@ -41,7 +41,7 @@ export default function Shop() {
                     <div className="row">
                         <div className="col-lg-8 offset-lg-2 text-center">
                             <div className="breadcrumb-text">
-                                <p>Fresh and Organic</p>
+                                {/* <p>Fresh and Organic</p> */}
                                 <h1>Shop</h1>
                             </div>
                         </div>
@@ -54,13 +54,12 @@ export default function Shop() {
             <div className="product-section mt-150 mb-150">
                 <div className="container">
                     <div className="row">
-                        <div className="col-md-12">
-                            <div class="dropdown mb-3">
-                                <a class="btn btn-light dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                        <div className="col-md-3">
+                            <div className="sidebar-widget categories-widget mt-60">
+                                <h1 className="widget-title position-relative fw-normal mb-3">
                                     Categories
-                                </a>
-
-                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                </h1>
+                                <ul className="categories-list list-unstyled">
                                     {
                                         loading ? <h1>Loading...</h1> : category.map((value) => {
                                             return (
@@ -72,9 +71,30 @@ export default function Shop() {
                                 </ul>
                             </div>
                         </div>
+                        <div className='col-md-9'>
+                            <div className="row product-lists">
+                                {
+                                    isPending ? <h1>Loading...</h1> : data.map((value) => {
+                                        return (
+                                            <div className="col-lg-4 col-md-6 text-center strawberry">
+                                                <div className="single-product-item">
+                                                    <div className="product-image">
+                                                        <Link to={`/singleproduct/${value.id}`}><img src={value.thumbnail} alt="" /></Link>
+                                                    </div>
+                                                    <h3>{value.title}</h3>
+                                                    <p className="product-price"><span>Price</span> {value.price} $</p>
+                                                </div>
+                                            </div>
+                                        )
+                                    })
+                                }
+
+                            </div>
+                        </div>
                     </div>
 
-                    <div className="row product-lists">
+                    {/* product list */}
+                    {/* <div className="row product-lists">
                         {
                             isPending ? <h1>Loading...</h1> : data.map((value) => {
                                 return (
@@ -91,7 +111,7 @@ export default function Shop() {
                             })
                         }
 
-                    </div>
+                    </div> */}
 
                     <div className="row">
                         <div className="col-lg-12 text-center">

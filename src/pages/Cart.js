@@ -9,6 +9,7 @@ export default function Cart() {
 
     return (
         <div>
+      
 
             {/* <!-- breadcrumb-section --> */}
             <div className="breadcrumb-section breadcrumb-bg">
@@ -16,7 +17,7 @@ export default function Cart() {
                     <div className="row">
                         <div className="col-lg-8 offset-lg-2 text-center">
                             <div className="breadcrumb-text">
-                                <p>Fresh and Organic</p>
+                                
                                 <h1>Cart</h1>
                             </div>
                         </div>

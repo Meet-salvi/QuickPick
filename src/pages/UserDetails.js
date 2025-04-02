@@ -10,6 +10,8 @@ export default function UserDetails() {
 
     return (
         <div>
+            
+
             {/* <!-- breadcrumb-section --> */}
             <div className="breadcrumb-section breadcrumb-bg">
                 <div className="container-fluid">
@@ -53,7 +55,7 @@ export default function UserDetails() {
                                 <h6>Name : {userdata.user.company.name}</h6>
                                 <h6>catchPhrase : {userdata.user.company.department}</h6>
                             </div>
-                            
+
                         </div>
                     </div>
                 </div>

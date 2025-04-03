@@ -107,7 +107,7 @@
   .header-btn{
     padding: 10px;
     border: none;
-    margin-left: 250px; /* Center the button */
+    margin-left: 450px; /* Center the button */
     background-color: #F28123;
     border-radius: 5px;
   }
@@ -118,6 +118,9 @@
     background-color: darkblue; /* Dark blue color */
     margin: 3px 0;
     transition: 0.3s;
+  }
+  .category-list{
+    display: none;
   }
 }
 
@@ -137,17 +140,14 @@
   .category-list{
     display: none;
   }
-  .search-product{
-    margin-top: -15px;
-  }
+  
   .header-btn{
     padding: 10px;
     border: none;
-    margin-left: 0 auto; /* Keep the original position for desktop */
     background-color: #F28123;
+    margin-left: 350px; /* Center the button */
     border-radius: 5px;
     position: relative;
-    display: block;
     /* width: 80%; */
     
   }

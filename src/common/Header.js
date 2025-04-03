@@ -64,7 +64,7 @@ export default function Header() {
                                             <div className="header-icons">
                                                 <a className="mobile-hide search-bar-icon" to="#"><i className="fas fa-search" onClick={() => setIsSearchOpen(true)}></i></a>
                                                 {/* <input type='search' className="mobile-hide search-bar-icon search-icon me-3" placeholder='search' onChange={(e) => { handleInput(e) }} /> */}
-                                                {user ? <Link className="shopping-cart" to="/cart"><i className="fas fa-shopping-cart"></i></Link> : null}
+                                                {user ? <Link className="shopping-cart d-block" to="/cart"><i className="fas fa-shopping-cart"></i></Link> : null}
                                                 {user ? <Link to="/userdetails" ><i className="fa fa-user-circle text-center"></i></Link> : null}
 
                                                 {user ? (
@@ -114,6 +114,8 @@ export default function Header() {
                                                 <Link className='log-btn me-2' to='/login'>Login</Link>
                                             )}
                                         </div>
+                                        {user ? <Link className="shopping-cart d-block" to="/cart"><i className="fas fa-shopping-cart mt-4" onClick={() => setOpen(!Open)}></i></Link> : null}
+                                        {user ? <Link to="/userdetails" ><i className="fa fa-user-circle text-center mt-3" onClick={() => setOpen(!Open)}></i></Link> : null}
                                     </ul>
                                 </div>
                                 {/*mobile menu end*/}
@@ -141,7 +143,7 @@ export default function Header() {
                                         {
                                             filter.map((value) => {
                                                 return (
-                                                    <li><Link to={`/productCategory/${value.name}`}>{value.name}</Link></li>
+                                                    <li onClick={() => setIsSearchOpen(false)}><Link to={`/productCategory/${value.name}`}>{value.name}</Link></li>
                                                 )
                                             })
                                         }

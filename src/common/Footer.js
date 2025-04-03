@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router'
 
 export default function Footer() {
     return (
@@ -10,16 +11,15 @@ export default function Footer() {
                         <div className="col-lg-3 col-md-6">
                             <div className="footer-box about-widget">
                                 <h2 className="widget-title">About us</h2>
-                                <p>Ut enim ad minim veniam perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae.</p>
+                                <p style={{textAlign:'justify'}}>Welcome to QuickPick, your one-stop shop for high-quality products at unbeatable prices! We are committed to providing exceptional customer service, fast shipping, and a seamless shopping experience. Our mission is to bring you the best deals on top-rated products. Shop with confidence today!</p>
                             </div>
                         </div>
                         <div className="col-lg-3 col-md-6">
                             <div className="footer-box get-in-touch">
                                 <h2 className="widget-title">Get in Touch</h2>
                                 <ul>
-                                    <li>34/8, East Hukupara, Gifirtok, Sadan.</li>
-                                    <li>support@fruitkha.com</li>
-                                    <li>+00 111 222 3333</li>
+                                    <li>salvimeet65@gmail.com</li>
+                                    <li>+91 7043743687</li>
                                 </ul>
                             </div>
                         </div>
@@ -27,11 +27,11 @@ export default function Footer() {
                             <div className="footer-box pages">
                                 <h2 className="widget-title">Pages</h2>
                                 <ul>
-                                    <li><a href="index.html">Home</a></li>
-                                    <li><a href="about.html">About</a></li>
-                                    <li><a href="services.html">Shop</a></li>
-                                    <li><a href="news.html">News</a></li>
-                                    <li><a href="contact.html">Contact</a></li>
+                                    <li className="current-list-item"><Link to="/">Home</Link></li>
+                                    {/* <li><Link to="/about">About</Link></li> */}
+                                    <li><Link to="/singlenews">News</Link></li>
+                                    <li><Link to="/contact">Contact</Link></li>
+                                    <li><Link to="/shop">Shop</Link></li>
                                 </ul>
                             </div>
                         </div>
@@ -41,7 +41,7 @@ export default function Footer() {
                                 <p>Subscribe to our mailing list to get the latest updates.</p>
                                 <form action="https://themewagon.github.io/fruitkha/index.html">
                                     <input type="email" placeholder="Email" />
-                                        <button type="submit"><i className="fas fa-paper-plane"></i></button>
+                                    <button type="submit"><i className="fas fa-paper-plane"></i></button>
                                 </form>
                             </div>
                         </div>
@@ -50,30 +50,6 @@ export default function Footer() {
             </div>
             {/* <!-- end footer --> */}
 
-            {/* <!-- copyright --> */}
-            <div className="copyright">
-                <div className="container">
-                    <div className="row">
-                        <div className="col-lg-6 col-md-12">
-                            <p>Copyrights &copy; 2019 - <a href="https://imransdesign.com/">Imran Hossain</a>,  All Rights Reserved.<br />
-                                Distributed By - <a href="https://themewagon.com/">Themewagon</a>
-                            </p>
-                        </div>
-                        <div className="col-lg-6 text-right col-md-12">
-                            <div className="social-icons">
-                                <ul>
-                                    <li><a href="#" target="_blank"><i className="fab fa-facebook-f"></i></a></li>
-                                    <li><a href="#" target="_blank"><i className="fab fa-twitter"></i></a></li>
-                                    <li><a href="#" target="_blank"><i className="fab fa-instagram"></i></a></li>
-                                    <li><a href="#" target="_blank"><i className="fab fa-linkedin"></i></a></li>
-                                    <li><a href="#" target="_blank"><i className="fab fa-dribbble"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            {/* <!-- end copyright --> */}
         </div>
     )
 }

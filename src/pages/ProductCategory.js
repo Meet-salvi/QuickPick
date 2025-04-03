@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react'
-import { Link, useLocation , useParams } from 'react-router';
+import { Link, useLocation, useParams } from 'react-router';
+
 
 export default function ProductCategory() {
     const [product, setProduct] = useState([]);
     const [category, setCategory] = useState([]);
+    const [isOpen, setIsOpen] = useState(false);
 
-    let {name} = useParams();    
+    let { name } = useParams();
 
     useEffect(() => {
         fetch(`https://dummyjson.com/products/category/${name}`).then((response) => {
@@ -26,7 +28,7 @@ export default function ProductCategory() {
 
     return (
         <div>
-            
+
 
             {/* <!-- breadcrumb-section --> */}
             <div className="breadcrumb-section breadcrumb-bg">
@@ -48,22 +50,28 @@ export default function ProductCategory() {
                 <div className="container">
                     <div className="row">
                         <div className="col-md-12">
-                            <div class="dropdown mb-3">
-                                <Link class="btn btn-light dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                            <div className="dropdown mb-3 d-lg-none d-md-block d-sm-block"> 
+                                <button
+                                    className="btn btn-light dropdown-toggle"
+                                    type="button"
+                                    id="dropdownMenuButton"
+                                    onClick={() => setIsOpen(!isOpen)}
+                                    aria-expanded={isOpen}
+                                >
                                     Categories
-                                </Link>
+                                </button>
 
-                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                    {
-                                        category.map((value) => {
-                                            return (
-                                                <li><Link class="dropdown-item" to={`/productCategory/${value.name}`}>{value.name}</Link></li>
-                                            )
-                                        })
-                                    }
-
+                                <ul className={`dropdown-menu${isOpen ? " show" : ""}`} aria-labelledby="dropdownMenuButton">
+                                    {category?.map((value, index) => (
+                                        <li key={index}>
+                                            <Link className="dropdown-item" to={`/productCategory/${value.name}`}>
+                                                {value.name}
+                                            </Link>
+                                        </li>
+                                    ))}
                                 </ul>
                             </div>
+                            
                         </div>
                     </div>
 

@@ -4,7 +4,7 @@ import { data, Link } from 'react-router';
 import { categorydata, productdata } from '../Api/api';
 
 export default function Shop() {
-
+    const [isOpen, setIsOpen] = useState(false);
     // category data
     const { isLoading: loading, data: category, error: suberror } = useQuery({
         queryKey: ['category'],
@@ -50,12 +50,63 @@ export default function Shop() {
             </div>
             {/* <!-- end breadcrumb section --> */}
 
+            {/* mobile catgory section */}
+            {/* <div className='container'>
+                <div className="row">
+                    <div className="col-md-12">
+                        <div className="dropdown mb-3 d-lg-none d-md-block d-sm-block">
+                            <button
+                                className="btn btn-light dropdown-toggle"
+                                type="button"
+                                id="dropdownMenuButton"
+                                onClick={() => setIsOpen(!isOpen)}
+                                aria-expanded={isOpen}
+                            >
+                                Categories
+                            </button>
+
+                            <ul className={`dropdown-menu${isOpen ? " show" : ""}`} aria-labelledby="dropdownMenuButton">
+                                {category?.map((value, index) => (
+                                    <li key={index}>
+                                        <Link className="dropdown-item" to={`/productCategory/${value.name}`}>
+                                            {value.name}
+                                        </Link>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div> */}
+
             {/* <!-- products --> */}
-            <div className="product-section mt-150 mb-150">
+            <div className="product-section mt-150 mb-150 ">
                 <div className="container">
                     <div className="row">
                         <div className="col-md-3">
-                            <div className="sidebar-widget categories-widget mt-60">
+                            <div className="dropdown mb-3 d-lg-none d-md-none d-sm-block">
+                                <button
+                                    className="btn btn-light dropdown-toggle"
+                                    type="button"
+                                    id="dropdownMenuButton"
+                                    onClick={() => setIsOpen(!isOpen)}
+                                    aria-expanded={isOpen}
+                                >
+                                    Categories
+                                </button>
+
+                                <ul className={`dropdown-menu${isOpen ? " show" : ""}`} aria-labelledby="dropdownMenuButton">
+                                    {category?.map((value, index) => (
+                                        <li key={index}>
+                                            <Link className="dropdown-item" to={`/productCategory/${value.name}`}>
+                                                {value.name}
+                                            </Link>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                            {/*  */}
+                            <div className="sidebar-widget categories-widget mt-60 d-lg-block d-md-block category-list">
                                 <h1 className="widget-title position-relative fw-normal mb-3">
                                     Categories
                                 </h1>

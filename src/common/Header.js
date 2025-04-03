@@ -5,9 +5,11 @@ import { logout } from '../features/Addtocart/user_login/login';
 import { useQuery } from '@tanstack/react-query';
 import { searchproductdata } from '../Api/api';
 
+
 export default function Header() {
     const user = useSelector((state) => state.user.user);
     const [isSearchOpen, setIsSearchOpen] = useState(false);
+    const [Open, setOpen] = useState(false);
     const [search, setSearch] = useState([]);
     const [filter, setFilter] = useState([]);
     const dispatch = useDispatch();
@@ -30,6 +32,7 @@ export default function Header() {
         })
         setFilter(filtercategory);
     }
+
 
     return (
         <div>
@@ -56,7 +59,6 @@ export default function Header() {
                                         <li><Link to="/singlenews">News</Link></li>
                                         <li><Link to="/contact">Contact</Link></li>
                                         <li><Link to="/shop">Shop</Link></li>
-                                        {/* <li><Link to="/userdetails">User</Link></li> */}
 
                                         <li>
                                             <div className="header-icons">
@@ -71,23 +73,50 @@ export default function Header() {
                                                     <Link className='log-btn me-2' to='/login'>Login</Link>
                                                 )}
                                             </div>
-                                            <div className=''>
-                                                {/* <ul style={{}}>
-                                                    {
-                                                        filter.map((value) => {
-                                                            return (
-                                                                <li><Link to={`/productCategory/${value.name}`}>{value.name}</Link></li>
-                                                            )
-                                                        })
-                                                    }
-                                                </ul> */}
-                                            </div>
+
 
                                         </li>
                                     </ul>
                                 </nav>
-                                <Link className="mobile-show search-bar-icon" to="#"><i className="fas fa-search"></i></Link>
-                                <div className="mobile-menu"></div>
+
+                                <Link className="mobile-show search-bar-icon search-product" to="#" onClick={() => setIsSearchOpen(true)}><i className="fas fa-search"></i></Link>
+                                <div className="header-toggle">
+                                    <button
+                                        className="header-btn mobile-menu-toggle d-xl-none "
+                                        onClick={() => setOpen(!Open)}
+                                    >
+                                        <span />
+                                        <span />
+                                        <span />
+                                    </button>
+                                </div>
+                                {/* <div className='d-lg-none d-md-none d-sm-block'>
+                                    {user ? (
+                                        <Link className='log-btn me-2' onClick={() => dispatch(logout())}>Logout</Link>
+                                    ) : (
+                                        <Link className='log-btn me-2' to='/login'>Login</Link>
+                                    )}
+                                </div> */}
+                                {/*mobile menu start*/}
+                                <div className={`mobile-menu ${Open ? "active" : ""}`}>
+                                    <div className="close" onClick={() => setOpen(!Open)}>
+                                        <span style={{ color: 'white' }}>X</span>
+                                    </div>
+                                    <ul className="mobile-nav-menu">
+                                        <li onClick={() => setOpen(!Open)} className="current-list-item"><Link to="/">Home</Link></li>
+                                        <li onClick={() => setOpen(!Open)}><Link to="/singlenews">News</Link></li>
+                                        <li onClick={() => setOpen(!Open)}><Link to="/contact">Contact</Link></li>
+                                        <li onClick={() => setOpen(!Open)}><Link to="/shop">Shop</Link></li>
+                                        <div className='d-lg-none d-md-none d-sm-block' onClick={() => setOpen(!Open)}>
+                                            {user ? (
+                                                <Link className='log-btn me-2' onClick={() => dispatch(logout())}>Logout</Link>
+                                            ) : (
+                                                <Link className='log-btn me-2' to='/login'>Login</Link>
+                                            )}
+                                        </div>
+                                    </ul>
+                                </div>
+                                {/*mobile menu end*/}
                                 {/* <!-- menu end --> */}
                             </div>
                         </div>
@@ -105,7 +134,7 @@ export default function Header() {
                             <div className="search-bar">
                                 <div className="search-bar-tablecell">
                                     <h3>Search For:</h3>
-                                    <input type="text" placeholder="Search" onChange={(e) => { handleInput(e) }}/>
+                                    <input type="text" placeholder="Search" onChange={(e) => { handleInput(e) }} />
                                     <button type="submit">Search <i className="fas fa-search" /></button>
                                     {/* Display search results */}
                                     <ul>

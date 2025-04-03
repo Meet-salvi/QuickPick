@@ -31,6 +31,7 @@ export default function Header() {
             return value.name.toLowerCase().includes(search.toLowerCase());
         })
         setFilter(filtercategory);
+
     }
 
 

@@ -104,11 +104,26 @@
   .login-form{
     width: 80%;
   }
+  .header-btn{
+    padding: 10px;
+    border: none;
+    margin-left: 250px; /* Center the button */
+    background-color: #F28123;
+    border-radius: 5px;
+  }
+  .header-btn span {
+    display: block;
+    width: 20px;
+    height: 4px;
+    background-color: darkblue; /* Dark blue color */
+    margin: 3px 0;
+    transition: 0.3s;
+  }
 }
 
 /* media query 480px */
 
-@media (max-width: 520px) {
+@media (max-width: 480px) {
   .login-form{
     width: 100%;
   }
@@ -128,9 +143,13 @@
   .header-btn{
     padding: 10px;
     border: none;
-    margin-left: 450px;
+    margin-left: 0 auto; /* Keep the original position for desktop */
     background-color: #F28123;
     border-radius: 5px;
+    position: relative;
+    display: block;
+    /* width: 80%; */
+    
   }
   .header-btn span {
     display: block;

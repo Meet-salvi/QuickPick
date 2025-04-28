@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import { Link, useNavigate, useParams } from 'react-router';
+import { data, Link, useNavigate, useParams } from 'react-router';
 import { addProducts } from '../features/Addtocart/addproductslice';
 import { singleproduct } from '../Api/api';
 import 'sweetalert2/dist/sweetalert2.min.css'

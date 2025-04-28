@@ -16,6 +16,7 @@ export async function singleproduct(id) {
     return response.json();
 }
 
+// 
 export async function categorydata() {
     try {
         const response = await axios.get('https://dummyjson.com/products/categories');
@@ -25,6 +26,7 @@ export async function categorydata() {
     }
 }
 
+//
 export async function userlogin() {
     try {
         const response = await axios.get('https://dummyjson.com/users');

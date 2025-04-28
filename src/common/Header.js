@@ -31,7 +31,6 @@ export default function Header() {
             return value.name.toLowerCase().includes(search.toLowerCase());
         })
         setFilter(filtercategory);
-
     }
 
 
@@ -62,20 +61,31 @@ export default function Header() {
                                         <li><Link to="/shop">Shop</Link></li>
 
                                         <li>
-                                            <div className="header-icons">
-                                                <a className="mobile-hide search-bar-icon" to="#"><i className="fas fa-search" onClick={() => setIsSearchOpen(true)}></i></a>
-                                                {/* <input type='search' className="mobile-hide search-bar-icon search-icon me-3" placeholder='search' onChange={(e) => { handleInput(e) }} /> */}
-                                                {user ? <Link className="shopping-cart d-block" to="/cart"><i className="fas fa-shopping-cart"></i></Link> : null}
-                                                {user ? <Link to="/userdetails" ><i className="fa fa-user-circle text-center"></i></Link> : null}
+                                            <div className="header-icons d-flex align-items-center gap-3">
+                                                {/* Search icon */}
+                                                <Link className="mobile-show search-bar-icon search-product" to="#" onClick={() => setIsSearchOpen(true)}><i className="fas fa-search"></i></Link>
 
-                                                {user ? (
-                                                    <Link className='log-btn me-2' onClick={() => dispatch(logout())}>Logout</Link>
-                                                ) : (
-                                                    <Link className='log-btn me-2' to='/login'>Login</Link>
+                                                {/* Conditionally rendered icons for authenticated users */}
+                                                {user && (
+                                                    <>
+                                                        <Link className="shopping-cart d-block" to="/cart">
+                                                            <i className="fas fa-shopping-cart"></i>
+                                                        </Link>
+                                                        <Link to="/userdetails">
+                                                            <i className="fa fa-user-circle text-center"></i>
+                                                        </Link>
+                                                    </>
                                                 )}
+
+                                                {/* Auth buttons */}
+                                                <div className='d-lg-block d-md-none d-sm-none' onClick={() => setOpen(!Open)}>
+                                                    {user ? (
+                                                        <Link className='log-btn me-2' onClick={() => dispatch(logout())}>Logout</Link>
+                                                    ) : (
+                                                        <Link className='log-btn me-2' to='/login'>Login</Link>
+                                                    )}
+                                                </div>
                                             </div>
-
-
                                         </li>
                                     </ul>
                                 </nav>
@@ -83,7 +93,7 @@ export default function Header() {
                                 <Link className="mobile-show search-bar-icon search-product" to="#" onClick={() => setIsSearchOpen(true)}><i className="fas fa-search"></i></Link>
                                 <div className="header-toggle">
                                     <button
-                                        className="header-btn mobile-menu-toggle d-xl-none "
+                                        className="header-btn mobile-menu-toggle d-xl-none d-lg-none"
                                         onClick={() => setOpen(!Open)}
                                     >
                                         <span />
@@ -99,7 +109,7 @@ export default function Header() {
                                     )}
                                 </div> */}
                                 {/*mobile menu start*/}
-                                <div className={`mobile-menu ${Open ? "active" : ""}`}>
+                                <div className={`mobile-menu ${Open ? "active" : ""} d-lg-none d-md-none d-sm-block`}>
                                     <div className="close" onClick={() => setOpen(!Open)}>
                                         <span style={{ color: 'white' }}>X</span>
                                     </div>
